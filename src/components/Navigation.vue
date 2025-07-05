@@ -31,8 +31,8 @@ const logout = useLogout()
                             </RouterLink>
                         </li>
                         <li class="nav-item">
-                            <RouterLink class="nav-link" to="/order">
-                                <i class="fa-solid fa-clipboard-list"></i> Order
+                            <RouterLink class="nav-link" to="/wishlist">
+                                <i class="fa-solid fa-clipboard-list"></i> Wishlist
                             </RouterLink>
                         </li>
                         <li class="nav-item">

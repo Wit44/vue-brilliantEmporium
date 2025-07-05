@@ -9,7 +9,10 @@ import { formatTime } from '@/utils';
 import Navigation from '@/components/Navigation.vue';
 
 
+
 const logout = useLogout()
+
+const username = AuthService.getUser()
 
 const books = ref<BookModel[]>()
 const allBooks = ref<BookModel[]>()
@@ -85,7 +88,7 @@ function doSearch(e: any) {
                         <RouterLink :to="`/book/${b.bookId}`" class="btn btn-sm btn-success">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </RouterLink>
-                        <button class="btn btn-sm btn-danger" @click="doDelete(b)">
+                        <button class="btn btn-sm btn-danger" v-if="username === 'admin@admin.com'" @click="doDelete(b)">
                             <i class="fa-solid fa-trash-can"></i>
                         </button>
                     </div>
