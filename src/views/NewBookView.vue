@@ -4,6 +4,7 @@ import { useLogout } from '@/hooks/logout.hook';
 import { BookService } from '@/services/book.service';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import '@/assets/NewBookView.css'
 
 const logout = useLogout()
 const router = useRouter()
@@ -44,7 +45,7 @@ function doCreate() {
                 <label for="author" class="form-label">Author:</label>
                 <input type="text" class="form-control" id="author" v-model="book.author">
             </div>
-            <button class="btn btn-primary">
+            <button class="btnNewBook">
                 <i class="fa-solid fa-floppy-disk"></i> Save
             </button>
         </form>

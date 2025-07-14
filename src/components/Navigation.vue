@@ -10,7 +10,7 @@ const logout = useLogout()
     <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
         <div class="container">
             <RouterLink class="navbar-brand" to="/">
-                <i class="fa-solid fa-book-open"></i> MyLibrary
+                <i class="fa-solid fa-book-open"></i> Brilliant Emporium
             </RouterLink>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -20,11 +20,6 @@ const logout = useLogout()
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <template v-if="AuthService.hasAuth()">
-                        <li class="nav-item">
-                            <RouterLink class="nav-link" to="/">
-                                <i class="fa-solid fa-house"></i> Home
-                            </RouterLink>
-                        </li>
                         <li class="nav-item">
                             <RouterLink class="nav-link" to="/book">
                                 <i class="fa-solid fa-book"></i> Books

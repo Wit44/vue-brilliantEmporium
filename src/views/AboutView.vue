@@ -5,7 +5,13 @@ import Navigation from '@/components/Navigation.vue';
 
 <template>
     <Navigation/>
-    <h1>This is an about page</h1>
+    <div class="about">
+        <div class="text-center">
+            <h1>Brilliant Emporium</h1>
+            <p>This Application is made as the project for the final thesis</p>
+            <p>Vladimir Milosavljevic - 2021230123&copy;</p>
+        </div>
+    </div>
 </template>
 
 

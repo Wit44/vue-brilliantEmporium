@@ -24,6 +24,21 @@ export class MainService {
         })
     }
 
+    //Testing
+    static async register(name: string, email: string, password: string){
+        return await client.request({
+            url: '/user/register',
+            method: 'post',
+            data: {
+                name,
+                email,
+                password
+            }
+        })
+    }
+    //end of testing
+
+    
     static async useAxios<T>(
         url: string,
         method: 'get' | 'post' | 'put' | 'delete' = 'get',

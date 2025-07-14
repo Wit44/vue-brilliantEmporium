@@ -7,7 +7,7 @@ import { AuthService } from '@/services/auth.service';
 import { useLogout } from '@/hooks/logout.hook';
 import { formatTime } from '@/utils';
 import Navigation from '@/components/Navigation.vue';
-
+import '@/assets/BookView.css'
 
 
 const logout = useLogout()
@@ -50,6 +50,9 @@ function doSearch(e: any) {
 
 <template>
     <Navigation/>
+    <div>
+        <h1 class="text-center">Library</h1>
+    </div>
     <div class="input-group mb-3 search">
         <span class="input-group-text" id="search">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -57,10 +60,9 @@ function doSearch(e: any) {
         <input type="text" class="form-control" aria-describedby="search" placeholder="Title, Author, Genre... 🔍"
             @keyup="(e) => doSearch(e)">
     </div>
-    <div>
-        <h3>Library</h3>
-        <RouterLink to="/book/new" class="btn btn-sm btn-primary">
-            <i class="fa-solid fa-plus"></i> Add a book
+    <div class="addBookBtn" v-if="username === 'admin@admin.com'">
+        <RouterLink to="/book/new" class="btn-newBook">
+            <p><i class="fa-solid fa-plus"></i>Add a book</p>
         </RouterLink>
     </div>
     <table class="table table-striped table-hover" v-if="books">
@@ -72,7 +74,7 @@ function doSearch(e: any) {
                 <th scope="col">Price</th>
                 <th scope="col">Author</th>
                 <th scope="col">Updated At</th>
-                <th scope="col">Actions</th>
+                <th scope="col" v-if="username === 'admin@admin.com'">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -84,7 +86,7 @@ function doSearch(e: any) {
                 <td>{{ b.author }}</td>
                 <td>{{ formatTime(b.updatedAt ?? b.createdAt) }}</td>
                 <td>
-                    <div class="btn-group">
+                    <div class="btn-group" v-if="username === 'admin@admin.com'">
                         <RouterLink :to="`/book/${b.bookId}`" class="btn btn-sm btn-success">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </RouterLink>

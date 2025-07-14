@@ -6,6 +6,7 @@ import { WishlistService } from '@/services/wishlist.service';
 import { ref } from 'vue';
 import { formatTime } from '@/utils';
 import Navigation from '@/components/Navigation.vue';
+import '@/assets/wishlistView.css'
 
 
 const wishlists = ref<WishlistModel[]>()
@@ -23,13 +24,16 @@ function doDelete(w: WishlistModel) {
 </script>
 
 <template>
-    <Navigation/>
+    <Navigation />
     <div>
         <h1 class="text-center">Wishlist</h1>
     </div>
-    <RouterLink to="/wishlist/new" class="btn btn-sm btn-primary">
-            <i class="fa-solid fa-plus"></i> Create wishlist
+    <div class="addWishlistBtn">
+        <RouterLink to="/wishlist/new" class="btn-wishlist">
+            <p><i class="fa-solid fa-plus"></i> Create wishlist</p>
         </RouterLink>
+    </div>
+
     <table class="table table-striped table-hover" v-if="wishlists">
         <thead>
             <tr>
@@ -45,7 +49,7 @@ function doDelete(w: WishlistModel) {
         <tbody>
             <tr v-for="w of wishlists" :key="w.wishlistId">
                 <th scope="row">{{ w.wishlistId }}</th>
-                <td>{{ w.bookId}}</td>
+                <td>{{ w.bookId }}</td>
                 <td>{{ w.book.title }}</td>
                 <td>{{ w.book.price }}</td>
                 <td>{{ w.book.author }}</td>

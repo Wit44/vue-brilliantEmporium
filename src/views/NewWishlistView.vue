@@ -4,7 +4,7 @@ import { WishlistService } from '@/services/wishlist.service';
 import { useLogout } from '@/hooks/logout.hook';
 import { useRouter } from 'vue-router';
 import { ref } from 'vue';
-
+import '@/assets/NewWishlistView.css'
 
 const logout = useLogout()
 const router = useRouter()
@@ -42,8 +42,8 @@ function doCreate() {
           placeholder="Enter Book ID"
         />
       </div>
-      <button class="btn btn-primary">
-        <i class="fa-solid fa-plus"></i> Add to Wishlist
+      <button class="btnAddToWishlist">
+        <p><i class="fa-solid fa-plus"></i> Add to Wishlist</p>
       </button>
     </form>
   </div>

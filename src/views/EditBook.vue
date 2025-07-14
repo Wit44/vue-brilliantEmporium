@@ -6,7 +6,7 @@ import { BookService } from '@/services/book.service';
 import { formatTime } from '@/utils';
 import { ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-
+import '@/assets/EditBook.css'
 
 const logout = useLogout()
 const route = useRoute()
@@ -54,8 +54,8 @@ function doUpdate() {
                 <label for="updated" class="form-label">Updated At:</label>
                 <input type="text" class="form-control" id="updated" :value="formatTime(book.updatedAt ?? book.createdAt)" disabled>
             </div>
-            <button class="btn btn-primary">
-                <i class="fa-solid fa-floppy-disk"></i> Save
+            <button class="btnSaveBook">
+                <p><i class="fa-solid fa-floppy-disk"></i> Save</p>
             </button>
         </form>
     </div>
