@@ -18,7 +18,7 @@ function doLogin(e: Event) {
     MainService.login(email.value, password.value)
         .then(rsp => {
             AuthService.createAuth(rsp.data)
-            router.push('/')
+            router.push('/book')
         })
         .catch(e=>alert('failed to login, check your email or password'))
 }

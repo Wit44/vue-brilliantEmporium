@@ -9,7 +9,7 @@ const logout = useLogout()
 <template>
     <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
         <div class="container">
-            <RouterLink class="navbar-brand" to="/">
+            <RouterLink class="navbar-brand" to="/book">
                 <i class="fa-solid fa-book-open"></i> Brilliant Emporium
             </RouterLink>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

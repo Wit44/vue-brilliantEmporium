@@ -17,14 +17,14 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: BookView,
+      redirect: '/login'
     },
     {
       path: '/login',
       name: 'login',
       component: LoginView,
     },
+    
     {
       path: '/register',
       name: 'register',
@@ -43,7 +43,6 @@ const router = createRouter({
         
         try {
           const name = AuthService.getUser()
-          console.log('User ID from authService:', name)
           if (name === 'admin@admin.com') {
             next()
           } else {
@@ -62,7 +61,6 @@ const router = createRouter({
       beforeEnter: (to, from, next) => {
         try {
           const name = AuthService.getUser()
-          console.log('User ID from authService:', name)
           if (name === 'admin@admin.com') {
             next()
           } else {

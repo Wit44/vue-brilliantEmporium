@@ -6,5 +6,5 @@ import Navigation from '@/components/Navigation.vue';
 
 <template>
  <Navigation/>
- 
+
 </template>
