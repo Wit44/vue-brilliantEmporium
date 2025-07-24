@@ -24,7 +24,7 @@ export class MainService {
         })
     }
 
-    //Testing
+    
     static async register(name: string, email: string, password: string){
         return await client.request({
             url: '/user/register',
@@ -36,7 +36,7 @@ export class MainService {
             }
         })
     }
-    //end of testing
+    
 
     
     static async useAxios<T>(

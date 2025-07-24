@@ -6,7 +6,7 @@ export class WishlistService {
         return await MainService.useAxios<WishlistModel[]>('/wishlist')
     }
 
-    //TESTING
+    
     static async createWishlist(data: {bookId: number}) {
         return await MainService.useAxios('/wishlist','post', data);
     }
